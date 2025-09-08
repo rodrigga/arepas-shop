@@ -4,10 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Arepas Shop</title>
+  </header>
+  <style>
+    .menu_title {
+      transition: color 0.3s, font-size 0.3s;
+    }
+  </style>
 </head>
-<body style="background-color:rgb(245, 244, 244)"> 
+<body style="background-color:rgb(245, 244, 244)">
   <header >
-    <div class="menu-icon"><h1>☰</h1></div>
+    <div id="menu_icon"><h1>☰</h1></div>
     <div class="logo">
       <img src="img/arepa logo.png" alt="Arepas Shop Logo"
        position: absolute;
@@ -15,12 +21,12 @@
   top: 20px;    /* Ajusta la distancia hacia arriba */
   right: 40px;  /* Ajusta la distancia hacia la derecha */" />
     </div>
-    <div class="menu-title">Our <br> <strong>MENU</strong></div>
+    <div id="menu_title">Our <br> <strong>MENU</strong></div>
     <img src="img/arepas.png" alt="arepas_img" id="arepas_img"
 position: absolute;
  style=" position: absolute;
   top: 100px;    /* Ajusta la distancia hacia arriba */
-  right: 40px;  /* Ajusta la distancia hacia la derecha */" /> 
+  right: 40px;  /* Ajusta la distancia hacia la derecha */" />
   </header>
 
   <nav class="categorias" style=" display: flex;
@@ -34,35 +40,33 @@ position: absolute;
   </nav>
 
 <nav1 class="platos arriva" style="display: flex; justify-content: center; align-items: center; gap: 50px;">
-<div class="arepa boyacense">
+<div id="arepa_boyacense">
     <img src="img/arepa boyac.png" alt="arepa boyacense">
     <div class="texto arepa">Arepa Boyacense</div>
     <button id="boton_compra_1"> comprar </button>
 </div>
 
-<div class="arepa de choclo">
+<div id="arepa_de_choclo">
     <img src="img/arepa choclo.png" alt="arepa de choclo">
     <div class="texto arepa">Arepa de choclo</div>
     <button id="boton_compra_2"> comprar </button>
 </div>
 
-
 </nav1>
 
-<nav2 class="platos abajo" style="display: flex; justify-content: center; align-items: center; gap: 50px;">   
-<div class="arepa carne">
+<nav2 class="platos abajo" style="display: flex; justify-content: center; align-items: center; gap: 50px;">  
+<div id="arepa_carne">
     <img src="img/arepa carne.png" alt="arepa de carne">
     <div class="texto arepa">Arepa de carne</div>
     <button id="boton_compra_3"> comprar </button>
 </div>
 
-<div class="arepa de huevo">
+<div id="arepa_de_huevo">
     <img src="img/arepa huevo.png" alt="arepa de huevo">
     <div class="texto arepa">Arepa de huevo</div>
     <button id="boton_compra_4"> comprar </button>
-    
+   
 </div>
-
 
 </nav2>
 <nav3 class="saber mas img"style="display: flex; justify-content: flex-start; align-items: center; gap: 20px;">
@@ -76,14 +80,14 @@ position: absolute;
 </body>
 <footer>
 <nav4 class="redes" style="display: flex; justify-content: flex-start; align-items: center; gap: 125px; margin-left: 40px;">
-<div class="boton ig"> 
+<div class="boton ig">
     <img src="img/ig logo .png" alt="logo de instagram">
 </div>
 
-<div class="boton x"> 
+<div class="boton x">
     <img src="img/logo x.png" alt="logo de twitter">
 </div>
-<div class="boton msg"> 
+<div class="boton msg">
     <img src="img/logo msg.png" alt="logo de mensajeria">
 </div>
 </nav4>
@@ -100,10 +104,40 @@ position: absolute;
 const image = document.getElementById("arepas_img");
  image.addEventListener("mouseover", function(){
   this.style.transform ="scale(1.2)";
-  this.style.transition = "transform 0.3s ease"; 
+  this.style.transition = "transform 0.3s ease";
   ;});
   image.addEventListener("mouseout", function () {
     this.style.transform = "scale(1)";
   });
 
+const imgArepaBoyacense = document.getElementById("arepa_boyacense");
+imgArepaBoyacense.addEventListener("mouseover", function() {
+  this.style.transform = "scale(1.2)";
+  this.style.transition = "transform 0.3s ease";
+});
+imgArepaBoyacense.addEventListener("mouseout", function() {
+  this.style.transform = "scale(1)";
+});
+
+const imgarepa_de_choclo = document.getElementById("arepa_de_choclo");
+imgarepa_de_choclo.addEventListener("mouseover", function() {
+  this.style.transform = "scale(1.2)";
+  this.style.transition = "transform 0.3s ease";
+});
+imgarepa_de_choclo.addEventListener("mouseout", function() {
+  this.style.transform = "scale(1)";
+});
+
+document.getElementById("menu_icon").addEventListener("click", function() {
+  document.body.style.backgroundColor = "gray";
+});
+const menuTitle = document.getElementById('menu_title');
+menuTitle.addEventListener('mouseover', function() {
+  this.style.color = 'white';
+  this.style.fontSize = '1.5em';
+});
+menuTitle.addEventListener('mouseout', function() {
+  this.style.color = 'black';
+  this.style.fontSize = '1.0em';
+});
 </script>
